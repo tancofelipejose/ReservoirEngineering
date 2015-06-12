@@ -41,7 +41,26 @@ def gasViscosity(P,T,spGr):
     Y = 2.4-0.2*X
     return K1*math.exp(X*rhog**Y)
 
- 
+def gasFVF(P,T,z,flag):
+    '''
+    
+    flag:
+    1 = Bg in rcf/scf
+    2 = Bg in RB/scf
+    3 = Bg in Rm3/Sm3
+
+    Important:
+    
+    if flag=1 or flag=2 then P in psia and T in R
+    if flag=3 then P is in Kpa and T in K
+    '''
+    if flag==1:
+        return 0.0282793*z*T/P
+    elif flag==2:
+        return 0.00503676*z*T/P
+    elif flag==3:
+        return 0.350958*z*T/P
+
 
 
 def zFactor(Pr,Tr):
