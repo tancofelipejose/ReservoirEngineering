@@ -30,6 +30,18 @@ def gasDensity(P,T,spGr):
     return 0.00149406*P*Mg/(z*T)
 
 
+def gasViscosity(P,T,spGr):
+    ''' Lee et al. estimation of natural gas viscosity 
+    P in psia, T in Rankine
+    '''
+    Mg = 28.967*spGr
+    rhog = gasDensity(P,T,spGr)
+    K1 = ((0.00094+(2e-6)*Mg)*T**1.5)/(209+19*Mg+T)
+    X = 3.5+(986/T)+(0.01*Mg)
+    Y = 2.4-0.2*X
+    return K1*math.exp(X*rhog**Y)
+
+ 
 
 
 def zFactor(Pr,Tr):
