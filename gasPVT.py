@@ -62,7 +62,6 @@ def gasFVF(P,T,z,flag):
         return 0.350958*z*T/P
 
 
-
 def zFactor(Pr,Tr):
     '''Dranchuk and Abou-Kassem fit of Standing and Katz gas compressibility factor '''
     A1 = 0.3265
@@ -86,5 +85,23 @@ def zFactor(Pr,Tr):
         zguess=z
     return z
 
-      
+
+def waterCompressibility(P,T,salinity):
+    ''' Water compressibility in psi**-1 (Osif's laboratory measurements)
+    P = pressure, psi
+    T = temperature, F
+    salinity in g/l of solution (good for 0 to 200 g/l NaCl)
+    '''
+    m1 = 7.033
+    m2 = 541.5
+    m3 = -537
+    m4 = 404.4e3
+    cwInv = m1*P+m2*salinity+m3*T+m4
+    return 1/cwInv
+    
+
+def rockCompressibility(porosity):
+    ''' Rock compressibility according to Hall's correlation (1/psi)
+    '''
+    return 1.87e-6*(porosity)**-0.415
 
