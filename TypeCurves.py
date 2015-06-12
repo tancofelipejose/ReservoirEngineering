@@ -29,24 +29,5 @@ def zFactor(Pr,Tr):
          zguess=z
 	return z
 
-
-
-
-
-
-class gasPVT(object):
-	def __init__(self,pressure,temperature, spGravity):
-		self.pressure = pressure
-		self.temperature = temperature
-		self.spGravity = spGravity
-		self.Ppc= 756.8-131.07*self.spGravity-3.6*self.spGravity**2
-		self.Tpc = 169.2+349.5*self.spGravity-74.0*spGravity**2
-		self.Pr = self.pressure/self.Ppc
-		self.Tr = self.temperature/self.Tpc
-
-	def getPr(self):
-		return self.Pr
-
-	def getTr(self):
-		return self.Tr
+      
 
