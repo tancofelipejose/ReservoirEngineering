@@ -1,6 +1,6 @@
 # The Reservoir Engineer's Toolbox
 ### Description
-This is a set of useful function for reservoir engineers that I hope one day can grow into a comprehensive function library for reservoir engineers.
+This is a set of useful function for reservoir engineers that I hope one day can grow into a comprehensive function library.
 
 The library so far includes functions that I use in my daily work which at the moment is gas reservoir engineering.
 
