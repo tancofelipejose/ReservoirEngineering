@@ -118,3 +118,6 @@ def rockCompressibility(porosity):
     '''
     return 1.87e-6*(porosity)**-0.415
 
+
+
+
